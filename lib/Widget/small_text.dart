@@ -7,7 +7,7 @@ class SmallText extends StatelessWidget {
     this.fontWeight = FontWeight.w400,
     this.overflow=TextOverflow.ellipsis,
     this.height=1.2,
-    this.size =20});
+    this.size =12});
 
   final String text;
   final Color? color;
