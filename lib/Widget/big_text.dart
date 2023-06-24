@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_app/utils/dimentions.dart';
 
 class BigText extends StatelessWidget {
    BigText({super.key,
@@ -22,7 +23,7 @@ class BigText extends StatelessWidget {
       overflow: overflow,
       style: TextStyle(
         color: color,
-        fontSize: size,
+        fontSize: Dimention.bigTextFontSize,
         fontWeight: fontWeight,
           fontFamily: 'Roboto'
       ),
