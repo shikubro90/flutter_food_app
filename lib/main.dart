@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_app/home/food_page.dart';
+import 'package:flutter_food_app/pages/home/food_page.dart';
+import 'package:flutter_food_app/pages/home/popular_food_details.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: FoodHomePage());
+        // home: FoodHomePage());
+        home: PopularFoodDetails());
   }
 }

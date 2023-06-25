@@ -13,7 +13,8 @@ class FoodPageBody extends StatefulWidget {
 }
 
 class _FoodPageBodyState extends State<FoodPageBody> {
-  PageController pageController = PageController(viewportFraction: Dimention.sliderGapBetween08);
+  PageController pageController =
+      PageController(viewportFraction: Dimention.sliderGapBetween08);
 
   var _currPageValue = 0.0;
   double _scaleFactor = 0.8;
@@ -64,6 +65,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 return _buildPageItem(position);
               }),
         ),
+        // DotsIndicator
         DotsIndicator(
           dotsCount: 5,
           position: _currPageValue.toInt(),
@@ -75,53 +77,130 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
-        SizedBox(height: Dimention.height30,),
+        // SizeBox
+        SizedBox(
+          height: Dimention.height20,
+        ),
+        // Short Text
         Container(
           child: Row(
             children: [
               Container(
                 margin: EdgeInsets.only(left: Dimention.width30),
-                child: BigText(text: "Popular", color: Colors.black26,),
+                child: BigText(
+                  text: "Popular",
+                  color: Colors.black26,
+                ),
               ),
-              SizedBox(width: Dimention.width10,),
+              SizedBox(
+                width: Dimention.width10,
+              ),
               Container(
-                margin: EdgeInsets.only(bottom: 5),
-                child: SmallText(text: ".", color: Colors.black26, size: 25,),
+                margin: const EdgeInsets.only(bottom: 5),
+                child: SmallText(
+                  text: ".",
+                  color: Colors.black26,
+                  size: 25,
+                ),
               ),
-              SizedBox(width: Dimention.width10,),
+              SizedBox(
+                width: Dimention.width10,
+              ),
               SmallText(text: "Food pairing")
             ],
           ),
         ),
-        Container(
-          height: 700,
-          child: ListView.builder(
-            physics: AlwaysScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 10,
-              itemBuilder: (context, index){
-                return Container(
-                  margin: EdgeInsets.only(left: Dimention.width20, right: Dimention.width20),
-                  child: Container(
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 120,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(Dimention.height20),
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage('assets/images/food-image2.jpg')
-                              )
-                          ),
-                        )
-                      ],
+        // List View Widgets
+        ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimention.width20,
+                    right: Dimention.width20,
+                    bottom: Dimention.height10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: Dimention.ListViewImageHight120,
+                      width: Dimention.ListViewImageWidth120,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimention.height20),
+                          image: const DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage(
+                                  'assets/images/food-image3.jpg'))),
                     ),
-                  ),
-                );
-              }),
-        )
+                    Expanded(
+                      child: Container(
+                        height: Dimention.infoContainerHight100,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(
+                                  Dimention.height20,
+                                ),
+                                bottomRight:
+                                    Radius.circular(Dimention.height20))),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimention.width10,
+                              right: Dimention.width10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              BigText(
+                                text:
+                                    "Nutrituas food in china here you can get ",
+                                color: Colors.black54,
+                              ),
+                              SizedBox(
+                                height: Dimention.height5,
+                              ),
+                              SmallText(text: "With chiness characterstics"),
+                              SizedBox(
+                                height: Dimention.height5,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  IconAndText(
+                                      iconData: Icons.circle_sharp,
+                                      text: "Normal",
+                                      iconColor: Colors.orange,
+                                      textColor: AppColors.mainBlackColor),
+                                  SizedBox(
+                                    width: Dimention.width5,
+                                  ),
+                                  IconAndText(
+                                      iconData: Icons.location_on,
+                                      text: "1.7km",
+                                      iconColor: AppColors.mainColor,
+                                      textColor: AppColors.mainBlackColor),
+                                  SizedBox(
+                                    width: Dimention.width5,
+                                  ),
+                                  IconAndText(
+                                      iconData: Icons.access_alarm_rounded,
+                                      text: "32 min",
+                                      iconColor: AppColors.iconColor2,
+                                      textColor: AppColors.mainBlackColor)
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              );
+            }),
       ],
     );
   }
@@ -166,7 +245,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(Dimention.borderRadius30),
                 image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/images/${images[index].toString()}'))),
+                    image: AssetImage(
+                        'assets/images/${images[index].toString()}'))),
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -178,7 +258,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     bottom: Dimention.prodcutPositionedCardAlignHeight30),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(Dimention.borderRadius20),
+                    borderRadius:
+                        BorderRadius.circular(Dimention.borderRadius20),
                     boxShadow: const [
                       BoxShadow(
                           color: Color(0xFFe8e8e8),

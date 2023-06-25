@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_app/Widget/big_text.dart';
 import 'package:flutter_food_app/Widget/small_text.dart';
-import 'package:flutter_food_app/home/food_page_body.dart';
 import 'package:flutter_food_app/utils/app_colors.dart';
 import 'package:flutter_food_app/utils/dimentions.dart';
+
+import 'food_page_body.dart';
 
 class FoodHomePage extends StatefulWidget {
   const FoodHomePage({super.key});

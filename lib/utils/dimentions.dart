@@ -40,4 +40,13 @@ class Dimention {
   static double height15 = screenHeight / 55.0;
   static double height10 = screenHeight / 82.6;
   static double height5 = screenHeight / 165.2;
+
+  static double ListViewImageHight120 = screenHeight/6.88;
+  static double ListViewImageWidth120 = screenWidth/3.26;
+
+  static double infoContainerHight100 = screenHeight/8.26;
+
+  static double foodDetailsScreenHeight350 = screenHeight/2.36;
+
+
 }
