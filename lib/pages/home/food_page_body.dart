@@ -283,8 +283,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         text: "Chinese Site",
                         color: AppColors.mainBlackColor,
                       ),
-                      const SizedBox(
-                        height: 5,
+                      SizedBox(
+                        height: Dimention.height5,
                       ),
                       Row(
                         children: [
@@ -297,22 +297,22 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                       size: 20,
                                     )),
                           ),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: Dimention.width10,
                           ),
                           SmallText(text: "4.5"),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: Dimention.width10,
                           ),
                           SmallText(text: "1287"),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: Dimention.width10,
                           ),
                           SmallText(text: "comments")
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: Dimention.height10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,

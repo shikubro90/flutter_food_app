@@ -48,5 +48,7 @@ class Dimention {
 
   static double foodDetailsScreenHeight350 = screenHeight/2.36;
 
+  static double iconSize16 = screenHeight/51.62;
+
 
 }
