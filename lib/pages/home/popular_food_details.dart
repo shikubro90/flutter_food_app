@@ -33,8 +33,8 @@ class PopularFoodDetails extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppIcon(icon: Icons.arrow_back_ios, iconColor: AppColors.mainBlackColor,),
-                  AppIcon(icon: Icons.shopping_bag_outlined, iconColor: AppColors.mainBlackColor),
+                  AppIcon(icon: Icons.arrow_back_ios),
+                  AppIcon(icon: Icons.shopping_bag_outlined,),
                 ],
               )),
           Positioned(
