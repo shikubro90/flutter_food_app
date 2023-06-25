@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_app/Widget/app_Icon.dart';
+import 'package:flutter_food_app/Widget/app_icon.dart';
 import 'package:flutter_food_app/utils/dimentions.dart';
 
 import '../../Widget/big_text.dart';
@@ -33,8 +33,8 @@ class PopularFoodDetails extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppIcon(icon: Icons.arrow_back_ios),
-                  AppIcon(icon: Icons.shopping_bag_outlined),
+                  AppIcon(icon: Icons.arrow_back_ios, iconColor: AppColors.mainBlackColor,),
+                  AppIcon(icon: Icons.shopping_bag_outlined, iconColor: AppColors.mainBlackColor),
                 ],
               )),
           Positioned(
