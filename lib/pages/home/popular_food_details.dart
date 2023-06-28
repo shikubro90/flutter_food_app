@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_app/Widget/app_column.dart';
 import 'package:flutter_food_app/Widget/app_icon.dart';
 import 'package:flutter_food_app/utils/dimentions.dart';
 
@@ -13,6 +14,7 @@ class PopularFoodDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -33,8 +35,13 @@ class PopularFoodDetails extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppIcon(icon: Icons.arrow_back_ios, iconColor: AppColors.mainBlackColor,),
-                  AppIcon(icon: Icons.shopping_bag_outlined, iconColor: AppColors.mainBlackColor),
+                  AppIcon(
+                    icon: Icons.arrow_back_ios,
+                    iconColor: AppColors.mainBlackColor,
+                  ),
+                  AppIcon(
+                      icon: Icons.shopping_bag_outlined,
+                      iconColor: AppColors.mainBlackColor),
                 ],
               )),
           Positioned(
@@ -42,88 +49,71 @@ class PopularFoodDetails extends StatelessWidget {
               right: 0,
               top: Dimention.foodDetailsScreenHeight350 - Dimention.height45,
               bottom: 0,
-              child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius:
-                        BorderRadius.only(
-                          topLeft: Radius.circular(Dimention.height20),
-                          topRight: Radius.circular(Dimention.height20)
-                        ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppColumn(text: "Chiness Side"),
+                  SizedBox(
+                    height: Dimention.height30,
                   ),
-                  child: Container(
+                  Container(
                     padding: EdgeInsets.only(
-                        left: Dimention.width15,
-                        right: Dimention.width15,
-                        top: Dimention.height15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        BigText(
-                          text: "Chinese Site",
-                          color: AppColors.mainBlackColor,
-                        ),
-                        SizedBox(
-                          height: Dimention.height5,
-                        ),
-                        Row(
-                          children: [
-                            Wrap(
-                              children: List.generate(
-                                  4,
-                                  (index) => Icon(
-                                        Icons.star_sharp,
-                                        color: AppColors.mainColor,
-                                        size: 20,
-                                      )),
-                            ),
-                            SizedBox(
-                              width: Dimention.width10,
-                            ),
-                            SmallText(text: "4.5"),
-                            SizedBox(
-                              width: Dimention.width10,
-                            ),
-                            SmallText(text: "1287"),
-                            SizedBox(
-                              width: Dimention.width10,
-                            ),
-                            SmallText(text: "comments")
-                          ],
-                        ),
-                        SizedBox(
-                          height: Dimention.height10,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            IconAndText(
-                                iconData: Icons.circle_sharp,
-                                text: "Normal",
-                                iconColor: Colors.orange,
-                                textColor: AppColors.mainBlackColor),
-                            SizedBox(
-                              width: Dimention.width10,
-                            ),
-                            IconAndText(
-                                iconData: Icons.location_on,
-                                text: "1.7km",
-                                iconColor: AppColors.mainColor,
-                                textColor: AppColors.mainBlackColor),
-                            SizedBox(
-                              width: Dimention.width10,
-                            ),
-                            IconAndText(
-                                iconData: Icons.access_alarm_rounded,
-                                text: "32 min",
-                                iconColor: AppColors.iconColor2,
-                                textColor: AppColors.mainBlackColor)
-                          ],
-                        )
-                      ],
+                        right: Dimention.width20, left: Dimention.width20),
+                    child: BigText(
+                      text: "Introduce",
+                      color: Colors.black87,
+                      fontWeight: FontWeight.normal,
                     ),
-                  )))
+                  )
+                ],
+              ))
         ],
+      ),
+      // bottom navigation
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: AppColors.buttonBackgroundColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Dimention.height20*2),
+            topRight: Radius.circular(Dimention.height20*2)
+          )
+        ),
+        padding: EdgeInsets.only(
+            left: Dimention.width20,
+            right: Dimention.width20,
+            top: Dimention.height30,
+            bottom: Dimention.height30),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // counter result
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: Dimention.width20, vertical: Dimention.height20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimention.height20),
+                color: Colors.white,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(Icons.remove),
+                  SizedBox(width: Dimention.width10/2,),
+                  BigText(text: "0"),
+                  SizedBox(width: Dimention.width10/2,),
+                  Icon(Icons.add)
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: Dimention.width20, vertical: Dimention.height20),
+              decoration: BoxDecoration(
+                color: AppColors.mainColor,
+                borderRadius: BorderRadius.circular(Dimention.height20),
+              ),
+              child: BigText(text: "\$10 | Add to cart",color: Colors.white,),
+            )
+          ],
+        ),
       ),
     );
   }

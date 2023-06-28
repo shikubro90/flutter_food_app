@@ -50,5 +50,7 @@ class Dimention {
 
   static double iconSize16 = screenHeight/51.62;
 
+  static double fontSize26 = screenHeight/31.7;
+
 
 }
