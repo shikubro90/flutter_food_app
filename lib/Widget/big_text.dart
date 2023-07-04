@@ -8,6 +8,7 @@ class BigText extends StatelessWidget {
       this.color = const Color(0xFF89dad0),
       this.fontWeight,
       this.overflow = TextOverflow.ellipsis,
+      this.isEllipsis = true,
       this.size = 20});
 
   final String text;
@@ -15,13 +16,14 @@ class BigText extends StatelessWidget {
   TextOverflow overflow;
   double size;
   final FontWeight? fontWeight;
+  bool isEllipsis;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       maxLines: 1,
-      overflow: overflow,
+      overflow: isEllipsis? overflow: null,
       style: TextStyle(
           color: color,
           fontSize: size,

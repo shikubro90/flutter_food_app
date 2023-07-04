@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_app/Widget/app_column.dart';
 import 'package:flutter_food_app/Widget/app_icon.dart';
+import 'package:flutter_food_app/Widget/expandable_text_widget.dart';
 import 'package:flutter_food_app/utils/dimentions.dart';
 
 import '../../Widget/big_text.dart';
@@ -52,7 +53,7 @@ class PopularFoodDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AppColumn(text: "Chiness Side"),
+                  const AppColumn(text: "Chiness Side"),
                   SizedBox(
                     height: Dimention.height30,
                   ),
@@ -64,6 +65,20 @@ class PopularFoodDetails extends StatelessWidget {
                       color: Colors.black87,
                       fontWeight: FontWeight.normal,
                     ),
+                  ),
+                  SizedBox(
+                    height: Dimention.height10,
+                  ),
+            Expanded(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                          padding: EdgeInsets.only(
+                              right: Dimention.width20, left: Dimention.width20),
+                        child: ExpandableTextWidget(
+                            text:
+                                "Simple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight app Simple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight app Simple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight app Simple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight app Simple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight appSimple apps with basic functionality, such as a calculator or flashlight app"),
+                      ),
+                    ),
                   )
                 ],
               ))
@@ -72,12 +87,10 @@ class PopularFoodDetails extends StatelessWidget {
       // bottom navigation
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: AppColors.buttonBackgroundColor,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(Dimention.height20*2),
-            topRight: Radius.circular(Dimention.height20*2)
-          )
-        ),
+            color: AppColors.buttonBackgroundColor,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(Dimention.height20 * 2),
+                topRight: Radius.circular(Dimention.height20 * 2))),
         padding: EdgeInsets.only(
             left: Dimention.width20,
             right: Dimention.width20,
@@ -88,7 +101,8 @@ class PopularFoodDetails extends StatelessWidget {
           children: [
             // counter result
             Container(
-              padding: EdgeInsets.symmetric(horizontal: Dimention.width20, vertical: Dimention.height20),
+              padding: EdgeInsets.symmetric(
+                  horizontal: Dimention.width20, vertical: Dimention.height20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimention.height20),
                 color: Colors.white,
@@ -97,20 +111,28 @@ class PopularFoodDetails extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(Icons.remove),
-                  SizedBox(width: Dimention.width10/2,),
+                  SizedBox(
+                    width: Dimention.width10 / 2,
+                  ),
                   BigText(text: "0"),
-                  SizedBox(width: Dimention.width10/2,),
+                  SizedBox(
+                    width: Dimention.width10 / 2,
+                  ),
                   Icon(Icons.add)
                 ],
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: Dimention.width20, vertical: Dimention.height20),
+              padding: EdgeInsets.symmetric(
+                  horizontal: Dimention.width20, vertical: Dimention.height20),
               decoration: BoxDecoration(
                 color: AppColors.mainColor,
                 borderRadius: BorderRadius.circular(Dimention.height20),
               ),
-              child: BigText(text: "\$10 | Add to cart",color: Colors.white,),
+              child: BigText(
+                text: "\$10 | Add to cart",
+                color: Colors.white,
+              ),
             )
           ],
         ),
